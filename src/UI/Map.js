@@ -4,21 +4,21 @@ export class Map {
         this.render(coords);
     }
     render(coordinates) {
-        if(!google) {
+        if(!window.ol) {
             alert('Could not load maps library - please try again later!');
             return;
         }
         document.getElementById('map').innerHTML = '';
 
-        const map = new ol.Map({
+        const map = new window.ol.Map({
             target: 'map',
             layers: [
-                new ol.layer.Tile({
-                source: new ol.source.OSM()
+                new window.ol.layer.Tile({
+                source: new window.ol.source.OSM()
                 })
             ],
-            view: new ol.View({
-                center: ol.proj.fromLonLat([coordinates.lng, coordinates.lat]),
+            view: new window.ol.View({
+                center: window.ol.proj.fromLonLat([coordinates.lng, coordinates.lat]),
                 zoom: 16
             })
         });

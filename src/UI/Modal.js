@@ -6,7 +6,7 @@ export class Modal {
     }
     show() {
         if('content' in document.createElement('template')) {
-            const modalElements = document.importNode(this.modalTemplateEl.contentEditable, true);
+            const modalElements = document.importNode(this.modalTemplateEl.content, true);
             this.modalElement = modalElements.querySelector('.modal');
             this.backdropElement = modalElements.querySelector('.backdrop');
             const contentElement = document.importNode(this.contentTemplateEl.content, true);

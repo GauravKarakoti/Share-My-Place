@@ -73,4 +73,4 @@ class PlaceFinder {
         }
     }
 }
-const PlaceFinder = new PlaceFinder();
+const placeFinder = new PlaceFinder();
