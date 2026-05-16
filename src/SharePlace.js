@@ -67,8 +67,10 @@ class PlaceFinder {
         modal.show();
         try {
             const coordinates = await getCoordsFromAddress(address);
+            modal.hide();
             this.selectPlace(coordinates, address);
         } catch(err) {
+            modal.hide();
             alert(err.message);
         }
     }
